@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formularios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        
+        <h3>Formularios</h3>
+        
+        <p>La etiqueta &lt;form&gt; sirve para anidar un formulario. Esta etiqueta admite varios atributos:</p>
+        <ul>
+            <li>Action="url.php". Es la ruta de validación del documento.</li>
+            <li>Metod="post o get". Es el método de envio de la información del formuliario, para que url.php lo valide. Por lo general se utiliza "post", porque es más seguro.</li>
+        </ul>
+        
+        <P>La estructura básica de un formulario es la siguiente:</P>
+        <ul>
+            <li>&lt;Fieldset&gt; &lt;/Fieldset&gt;= agrupa controles o campos de un formulario.</li>
+            <li>&lt;Legend&gt; &lt;/Legend&gt;= es el título de los campos que están incluidos en fieldset.</li>
+            <li>&lt;Label&gt; &lt;/Label&gt;= asocia rótulo o etiqueta a un campo de un formulario</li>
+            <li>&lt;Input&gt; &lt;/Input&gt;, aceptan multiples atributos, entre ellos los siguientes:
+                <ul>
+                    <li>Type= tipo de input que es.</li>
+                    <li>Name= define la información que contendrá el input.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <form action="url.php" method="post">
+        <fieldset>
+            <legend>Cajas de texto</legend>
+            <label>Campo de texto</label>
+            <input type="text" name="campoTexto" value="nombre" placeholder="name" required>
+            <!-- si adjuntamos el atributo value="" acompañado de required, al validar el formulario, ya no será requerido , ya que tiene un valor predeterminado-->
+            
+            <br>
+            <label>Password</label>
+            <input type="password" name="textoProtegido" placeholder="00000" required>
+            <br>
+            <label>Números</label>
+            <input type="number" name="campoNumeros" required>
+            <br>
+            <label>TextArea</label>
+            <textarea name="areaTexto" placeholder="Placeholder permite acosejar que queremos que el cliente haga."></textarea>
+        </fieldset>
+        
+        <p>La etiqueta &lt;select&gt; &lt;/select&gt; crea campos de selección. Radiobutton, checkbox, lista de selección única y selección múltiple</p>
+        
+        <fieldset>
+            <legend>Controles de selección</legend>
+            
+            <label>Lista de selección simple, también llamado combo.</label>
+            <select name="opciones">
+                <option></option>
+                <option>Café</option>
+                <option selected="selected">Té</option>
+                <!--atributo selected="selected" hace que
+                sea la opción predertimada-->
+                <option>Refrescos</option>                
+            </select>
+            
+            <br>
+            
+            <label>Lista de selección única, mostrando varias opciones.</label>
+            <select name="seleccionUnica" size="4">
+                <!--el atributo size="!=1" hace que el navegador muestre más de una opción y cada navegador los interpreta a su manera-->
+                <option></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            
+            <br>
+            
+            <label>Lista de selección múltiple, mostrando varias opciones.</label>
+            <select name="seleccionMultiple" size="4" multiple>
+                <option></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            
+            <br>
+            
+            <label>Lista de selección múltiple, con alguna opción deshabilitada</label>
+            <select name="seleccionMultiple" size="4" multiple="multiple">
+                <option></option>
+                <option disabled>1</option>
+                <option selected>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            
+            <br><br>
+            
+            <label>Radiobutton</label>
+            
+            <label for="1">Perro</label>
+            <input type="radio" name="animal" value="1" id="1">
+            <label for="2">Gato</label>
+            <input type="radio" name="animal" value="2" id="2">
+            
+            <label for="3">Ratón</label>
+            <input type="radio" name="animal" value="3" id="3">
+            
+            
+            <br>
+            
+            <label>Lista de botones checkbox</label>
+            
+            <label for="perro">Perro</label>
+            <input type="checkbox" name="animal" value="1" id="perro" checked>
+            <label for="gato">Gato</label>
+            <input type="checkbox" name="animal" value="2" id="gato">
+            <label for="raton">Ratón</label>
+            <input type="checkbox" name="animal" value="3" id="raton">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Subida de ficheros</legend>
+            <input type="file" name="file">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Campo oculto, campos que queremos enviar pero sin que el cliente lo sepa.</legend>
+            <label>&lt;input type="hidden"&gt;</label>
+            <input type="hidden" name="oculto" value="oculto">
+         </fieldset>
+        
+        <fieldset>
+            <legend>Tipos de botones</legend>
+            <label>Botón que enviará el formulario a url.php</label>
+            <input type="submit" value="Pinchame si tienes huevos"><br>
+            <label>Botón de resetear formulario</label>
+            <input type="reset" value="Resetea formulario">
+        </fieldset>
+    </form>        
+    </body>
+</html>
