@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Etiqueta Audio html5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h2>Audio con controles html5</h2>
+        <audio src="material/rain.mp3" controls></audio>
+        <audio controls>
+            <source src="material/rain.mp3" type="audio/mpeg">
+            <source src="material/rain.ogg" type="audio/ogg">
+        </audio>
+        
+        <h2>Audio con controles propios. Controles js</h2>
+        <audio src="material/rain.mp3" id="rain"></audio>
+        <div id="botones">
+            <button onclick="document.getElementById('rain').play()">Play</button>
+            <button onclick="document.getElementById('rain').pause()">Pause</button>
+            <!--no hay boton de stop, solo pausa-->
+            <button onclick="document.getElementById('rain').volume+=0.1">Vol +,</button>
+            <button onclick="document.getElementById('rain').volume-=0.1">Vol -</button>
+        </div>
+        
+    </body>
+</html>
